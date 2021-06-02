@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainPageController">
+   <children>
+      <MenuBar layoutX="9.0" layoutY="14.0" prefHeight="34.0" prefWidth="582.0">
+        <menus>
+          <Menu fx:id="menuCategory" mnemonicParsing="false" text="Категории">
+            <items>
+              <MenuItem fx:id="mnltmPok" mnemonicParsing="false" text="Показать" />
+                  <MenuItem fx:id="mnltDob" mnemonicParsing="false" text="Добавить" />
+                  <MenuItem fx:id="mnltDelete" mnemonicParsing="false" text="Удалить" />
+                  <MenuItem fx:id="mnltRedac" mnemonicParsing="false" text="Редактировать" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuProduct" mnemonicParsing="false" text="Товары">
+            <items>
+              <MenuItem fx:id="mnltProdPokaz" mnemonicParsing="false" text="Показать" />
+                  <MenuItem fx:id="mnltProdAdd" mnemonicParsing="false" text="Добавить" />
+                  <MenuItem fx:id="mnltProdRedactor" mnemonicParsing="false" text="Редактировать" />
+                  <MenuItem fx:id="mnltProductDelete" mnemonicParsing="false" text="Удалить" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuAdmin" mnemonicParsing="false" text="Админ">
+            <items>
+              <MenuItem fx:id="mnltAdminPokaz" mnemonicParsing="false" text="Показать" />
+                  <MenuItem fx:id="mnltAdminRedactor" mnemonicParsing="false" text="Редактировать" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
