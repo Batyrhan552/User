@@ -55,6 +55,7 @@ public class Controller {
               } catch (IOException e) {
                   e.printStackTrace();
               }
+
           }else {
               Alert alert = new Alert(Alert.AlertType.WARNING,"Вход не выполнен");
               alert.show();
