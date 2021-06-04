@@ -73,5 +73,19 @@ public class MainPageController {
             e.printStackTrace();
         }
     });
+    mnltmPok.setOnAction(actionEvent -> {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sample/view/showCategories.fxml"));
+        try {
+            Scene scene = new Scene(loader.load(), 600, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Склад");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    });
     }
 }

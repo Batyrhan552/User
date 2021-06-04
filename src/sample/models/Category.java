@@ -3,9 +3,9 @@ package sample.models;
 public class Category {
     private Long id;
     private String name;
-    private boolean active;
+    private int active;
 
-    public Category(String name, boolean active) {
+    public Category(String name, int active) {
         this.name = name;
         this.active = active;
     }
@@ -29,11 +29,11 @@ public class Category {
         this.name = name;
     }
 
-    public boolean isActive() {
+    public int isActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(int active) {
         this.active = active;
     }
 }
