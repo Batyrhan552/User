@@ -36,4 +36,12 @@ public class Category {
     public void setActive(int active) {
         this.active = active;
     }
+
+    @Override
+    public String toString() {
+        return
+                ", name='" + name + '\'' +
+                ", active=" + active ;
+
+    }
 }

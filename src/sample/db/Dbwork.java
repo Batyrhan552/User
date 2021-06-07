@@ -1,12 +1,14 @@
-package sample;
+package sample.db;
 
+import sample.db.DbWorkInterface;
 import sample.models.Category;
 import sample.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Dbwork {
+public class Dbwork implements DbWorkInterface {
+
     public boolean  checkUser(User user){
         Connection connection = getConnection();
         try{
@@ -112,6 +114,36 @@ public class Dbwork {
                 }
             }
             return null;
+    }
+
+    @Override
+    public ArrayList<Category> selectAllActiveCategories() {
+        ArrayList<Category> categories = new ArrayList<>();
+        Connection connection = getConnection();
+        try {
+            Statement statement = connection.createStatement();
+            String query= "Select name,active from category c  where c.active = 1";
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                String name = resultSet.getString("name");
+                int activator = resultSet.getInt("active");
+                Category category = new Category(name,activator);
+                categories.add(category);
+            }
+            return categories;
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        return null;
     }
 
     public Connection getConnection(){

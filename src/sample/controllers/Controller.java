@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import sample.db.Dbwork;
 import sample.models.User;
 
 public class Controller {
@@ -31,11 +33,14 @@ public class Controller {
 
     @FXML
     private Button btnR;
+//    @FXML
+//    private AnchorPane idAnc;
 
     @FXML
     void initialize() {
 
         btninput.setOnAction(actionEvent -> {
+            btninput.getScene().getWindow().hide();
             String loginUser = loginfx.getText().trim();
             String passwordUser = passwordfx.getText().trim();
 
